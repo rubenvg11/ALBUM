@@ -20,5 +20,8 @@ from album import views
 urlpatterns = [
     path('', views.first_view, name='first-view'),
     path('category/', views.category, name='category-list'), 
-    
+    path('category/<int:category_id>/detail/',views.category_detail,name='category-detail'), 
+
+    path('photo/', views.PhotoListView.as_view(),name='photo-list'),
+    path('photo/<int:pk>/detail/',views.PhotoDetailView.as_view(),name='photo-detail'), 
 ]
