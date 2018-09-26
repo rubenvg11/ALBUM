@@ -3,8 +3,10 @@ from django.http import HttpResponse
 from album.models import Category, Photo 
 from django.views.generic import ListView, DetailView
 
-def first_view(request):
-    return HttpResponse('<h1>Esta es mi primera vista!</h1><h3>otra linea</h3>') 
+#def first_view(request):
+ #   return HttpResponse('<h1>Esta es mi primera vista!</h1><h3>otra linea</h3>') 
+def base(request):
+    return render(request, 'base.html')
 
 def category(request):
     category_list = Category.objects.all()
