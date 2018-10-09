@@ -1,16 +1,24 @@
 {% extends 'base.html' %}
 
 {% block section %}
-   <h2>Category</h2>
-   <hr>
+    <h2>Category</h2>
+    <hr>
 {% endblock section %}
 
 {% block maincontent %}
-   <div>
-   {% for c in object_list %}
-    <a href="{% url 'category-detail' c.pk %}">
-      {{ c.name }}
-     </a>
-   {% endfor %}
-   </div>
-{% endblock maincontent %} 
+    <div class="row well">
+            {% for p in object_list %}
+                <div class="col-md-4 well">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <a href="{% url 'category-detail' p.pk %}">
+                                {{p.name}}
+                                </a>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+{% endblock maincontent %}
