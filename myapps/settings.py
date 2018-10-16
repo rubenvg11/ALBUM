@@ -32,10 +32,12 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django_adminlte',
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'album',
@@ -127,3 +129,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 STATICFILES_DIRS = (
  os.path.join(BASE_DIR, 'media'),
 ) 
+SITE_ID=1
+ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, use a different value.
+REGISTRATION_AUTO_LOGIN = True # Automatically log the user in.
+SIMPLE_BACKEND_REDIRECT_URL='/album'
+
+EMAIL_USE_TLS=True
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_HOST_USER='frameworksumariana@gmail.com'
+EMAIL_HOST_PASSWORD='ingsis604'
+EMAIL_PORT=587
